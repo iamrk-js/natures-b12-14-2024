@@ -1,1 +1,14 @@
  
+
+ @mixin atCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+
+ %atCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
