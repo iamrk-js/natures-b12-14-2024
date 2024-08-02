@@ -1,14 +1,20 @@
- 
+@mixin atCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// direction color1 color2
+@mixin lg($direction, $colors...) {
+  background-image: linear-gradient($direction, $colors);
+}
 
- @mixin atCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
-
-
- %atCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
+@mixin bgTextClip {
+  display: inline-block;
+  color: transparent;
+  background-clip: text;
+}
+%atCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

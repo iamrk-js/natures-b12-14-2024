@@ -47,12 +47,35 @@
 
   &:hover {
     // .btn:hover
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 
     &::after {
       //  .btn:hover::after
       transform: scaleX(1.3) scaleY(1.6);
       opacity: 0;
     }
+  }
+
+  &-text{ // btn-text
+    font-size: 1.6rem;
+    color: $color-primary;
+    display: inline-block;
+    border-bottom: 1px solid !important;
+    padding: 3px !important;
+    border-radius: 0px !important;
+    text-transform: capitalize;
+
+    &:hover,
+    &:active,
+    &:focus{
+      background-color: $color-primary;
+      color: $color-white;
+      box-shadow: 0 1rem 2rem rgba($color-dark,.2);
+    }
+  }
+
+  &:active{
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 10rem rgba($color-dark,.2);
   }
 }

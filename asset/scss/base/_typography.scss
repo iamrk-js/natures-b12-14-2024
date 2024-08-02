@@ -1,0 +1,35 @@
+.pri-heading {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 8rem;
+  // background-color: orange;
+  // background-image: linear-gradient(to right,$color-primary-light,$color-primary-dark);
+  // display: inline-block;
+  // color: transparent;
+  // background-clip: text;
+
+  @include lg(to right, $color-primary-light, $color-primary-dark);
+  @include bgTextClip;
+  transition: all 0.2s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    transform: scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-dark, 0.2);
+  }
+}
+
+
+.sec-heading{
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.para{
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
