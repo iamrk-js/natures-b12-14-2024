@@ -1,0 +1,171 @@
+.card {
+  height: 52rem;
+  position: relative;
+
+  &-side {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 1.5rem 2rem rgba($color-dark, 0.15);
+    backface-visibility: hidden;
+    transition: all 0.8s ease-in-out;
+  }
+
+  &-front {
+    background-color: $color-white; // rotate : 0deg
+  }
+
+  &-back {
+    transform: perspective(150rem) rotateY(180deg);
+    text-align: center;
+    @include atCenter;
+    flex-direction: column;
+    &-price {
+      // .card-back-only
+      color: $color-white;
+      margin-bottom: 8rem;
+      > span {
+        display: block;
+      }
+
+      &-only {
+        text-transform: uppercase;
+      }
+
+      &-value {
+        font-size: 6rem;
+        font-weight: 300;
+      }
+    }
+  }
+
+  &:hover &-front {
+    // .card:hover .card-front
+    transform: perspective(150rem) rotateY(-180deg);
+  }
+
+  &:hover &-back {
+    transform: perspective(150rem) rotateY(0deg);
+  }
+
+  &-1 &-back {
+    // .card-1 .card-back
+    @include lg(to right bottom, $color-secondary-light, $color-secondary-dark);
+  }
+
+  &-2 &-back {
+    // .card-2 .card-back
+    @include lg(to right bottom, $color-primary-light, $color-primary-dark);
+  }
+
+  &-3 &-back {
+    //// .card-3 .card-back
+    @include lg(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+  }
+
+  &-img {
+    background-position: center;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    background-blend-mode: screen;
+    height: 23rem;
+  }
+
+  &-1 {
+    // .card-1
+    .card-img {
+      // .card-1 .card-img
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../images/nat-5.jpg);
+    }
+
+    .card-heading span{
+        background-image: linear-gradient(
+            to right bottom,
+            $color-secondary-light,
+            $color-secondary-dark
+          );
+    }
+  }
+
+  &-2 {
+    // .card-1
+    .card-img {
+      // .card-1 .card-img
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url(../images/nat-6.jpg);
+    }
+
+    .card-heading span{
+        background-image: linear-gradient(
+            to right bottom,
+            $color-primary-light,
+            $color-primary-dark
+          );
+    }
+  }
+
+  &-3 {
+    // .card-1
+    .card-img {
+      // .card-1 .card-img
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url(../images/nat-7.jpg);
+    }
+
+    .card-heading span{
+        background-image: linear-gradient(
+            to right bottom,
+            $color-tertiary-light,
+            $color-tertiary-dark
+          );
+    }
+  }
+
+  &-heading {
+    position: absolute;
+    top: 9rem;
+    right: 2rem;
+    font-size: 2.8rem;
+    width: 60%;
+    text-align: right;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+    span {
+      padding: 1rem 1.5rem; 
+      box-decoration-break: clone;
+    
+    }
+  }
+
+  &-details {
+    list-style: none;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 3rem;
+    > li {
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        padding: 1rem;
+        &:not(:last-child){
+            border-bottom: 1px solid $color-grey-light-2;
+        }
+    }
+  }
+}
