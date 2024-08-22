@@ -28,6 +28,7 @@
   }
 
   &:hover &-img:not(:hover){
-    transform: scale(.9);
+    transform: scale(.9) ;
+    filter: blur(2px);
 }
 }
